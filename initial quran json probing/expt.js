@@ -1,4 +1,5 @@
-fetch("quran_truncated.json")
+///
+fetch("quran_combined.json")
   .then(function (response) {
     return response.json();
   })
@@ -13,13 +14,13 @@ fetch("quran_truncated.json")
 
 findAya = (obj) => {
   // obj[0].length = obj[0].AyaText.length;
-  // console.table(obj);
+  console.table(obj);
   // console.log(obj);
   // console.log("find aya executed");
 
   obj.forEach((item, index) => {
     // console.log(item.AyaText.length);
-    obj[index].AyaLength = item.AyaText.length;
-    console.log(obj);
+    // obj[index].AyaLength = item.AyaText.length;
+    // console.log(obj);
   });
 };

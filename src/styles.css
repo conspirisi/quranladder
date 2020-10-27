@@ -5,4 +5,7 @@
 @tailwind utilities;
 
 @layer utilities {
+  .arabic {
+    word-spacing: 0.225em;
+  }
 }

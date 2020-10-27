@@ -22906,6 +22906,10 @@ video {
           animation: bounce 1s infinite;
 }
 
+.arabic {
+  word-spacing: 0.225em;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;

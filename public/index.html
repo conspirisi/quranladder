@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="expt.js"></script>
+    <!-- <script type="module" src="expt.js"></script> -->
   </head>
   <body class="mt-10 m-0 p-0 bg-myColors-bkg font-myFont">
     <div class="container w-11/12 m-auto grid sm:grid-cols-smBind md:grid-cols-3 grid-rows-mdSmBind gap-2">
@@ -13,10 +15,34 @@
         <img class="inline-block mb-6 ml-4" src="img/ladder.png" alt="ladder image" />
         <div class="inline-block text-5xl ml-2 text-gray-300">Qur&rsquo;an Ladder</div>
       </div>
-      <div class="area arabic md:col-span-3 bg-myColors-panel rounded-lg shadow-lg">arabic</div>
+      <div class="area arabic md:col-span-3 text-4xl p-8 bg-myColors-panel rounded-lg shadow-lg">
+        <div dir="rtl" lang="ar" class="arabic text-myColors-font"></div>
+      </div>
       <div class="area filters md:col-span-3 bg-myColors-panel rounded-lg shadow-lg">filters</div>
-      <div class="area translation md:col-span-2 bg-myColors-panel rounded-lg shadow-lg">translation</div>
+      <div class="area translation md:col-span-2 bg-myColors-panel text-myColors-font rounded-lg shadow-lg">
+        <div class="translationHeader m-4 text-gray-300 font-semibold">Translation</div>
+        <div class="translater-ali ml-4 text-gray-300 -mb-2">Yusuf Ali</div>
+        <div class="trans1 m-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, debitis tempore. Animi possimus aperiam est, itaque porro obcaecati! Modi laboriosam voluptatibus, dignissimos mollitia corporis
+          eligendi culpa quibusdam delectus voluptate est eos labore in, blanditiis repellendus. Dolores iste voluptates laudantium, maxime quos hic temporibus adipisci est, neque, consequuntur
+          consectetur molestiae qui!
+        </div>
+        <div class="translater-ali ml-4 text-gray-300 -mb-2">Pickhall</div>
+        <div class="trans2 m-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, debitis tempore. Animi possimus aperiam est, itaque porro obcaecati! Modi laboriosam voluptatibus, dignissimos mollitia corporis
+          eligendi culpa quibusdam delectus voluptate est eos labore in, blanditiis repellendus. Dolores iste voluptates laudantium, maxime quos hic temporibus adipisci est, neque, consequuntur
+          consectetur molestiae qui!
+        </div>
+        <div class="translater-ali ml-4 text-gray-300 -mb-2">Arberry</div>
+        <div class="trans3 m-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, debitis tempore. Animi possimus aperiam est, itaque porro obcaecati! Modi laboriosam voluptatibus, dignissimos mollitia corporis
+          eligendi culpa quibusdam delectus voluptate est eos labore in, blanditiis repellendus. Dolores iste voluptates laudantium, maxime quos hic temporibus adipisci est, neque, consequuntur
+          consectetur molestiae qui!
+        </div>
+      </div>
       <div class="area notes bg-myColors-panel rounded-lg shadow-lg">notes</div>
     </div>
   </body>
 </html>
+
+<!-- <p dir="rtl" lang="ar">رَبٍّ زِدْنٍي عِلمًا</p> -->
