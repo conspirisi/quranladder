@@ -24,7 +24,7 @@ module.exports = {
           bkg: "#027D78",
           panel: "#229A95",
           font: "#F0EA87",
-          400: "#cbd5e0",
+          button: "#FFC555",
           500: "#a0aec0",
           600: "#718096",
           700: "#4a5568",
