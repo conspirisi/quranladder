@@ -74,7 +74,7 @@ goButtonFunc = () => {
   //body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > form > div.go.m-1.ml-3.text-myColors-button.inline-block
   goButtonFunc = () => {
     quranRange();
-    renderPage();
+    renderPage(filteredRange[ayaIndexPosInFiltered]);
   };
   goButton.addEventListener("click", goButtonFunc);
 };
