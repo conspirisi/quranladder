@@ -5,79 +5,86 @@
 // myArray = ["1", "5", "2", "6", "7", "3", "5"];
 // console.log(myArray);
 
-sortedArray = ayaLengthArray.filter((value) => {
-  if (value < 15) {
-    return value;
-  }
-});
-console.log(sortedArray);
+// console.log(sortedArray);
 
 //
-
-// let AyaLengthInput = document.querySelector("#AyaLength");
-
-//console.log(AyaLengthInput.innerText.value);
-//
-
+var filteredRange = [];
+var quranObjNew = {};
+var ayaIndexPosInFiltered = 0;
+//********************************  this code must run before doing anything ******************************
 fetch("quran_combined.json")
   .then(function (response) {
     return response.json();
   })
-  .then(function (obj) {
-    // console.log(obj);
-    findAya(obj);
+  .then(function (quranObj) {
+    // console.log(quranObj);
+    quranObjNew = quranObj;
+
+    mainSeq();
+
+    // console.log("when is this happeining?");
   })
   .catch(function (error) {
     console.error("Something went wrong retrieving the quran");
     console.error(console.error);
   });
+//********************************  end of quran load ******************************
+mainSeq = () => {
+  renderPage();
+  //quranRange(quranObj);
+  goButtonFunc();
+  nextButtonFunc();
+};
 
-findAya = (obj, inputAyaLength) => {
-  console.log(Array.isArray(obj.AyaLength));
-
-  let quranIndex = 10;
-  // console.log(obj[quranIndex].AyaText);
+// ****************************** main sequence ******************************
+renderPage = (ayaNumber = 0) => {
   //
-
-  console.log(ayaLengthArray[2]);
-  // let AyaLength=
-  //
-  let AyaText = obj[quranIndex].AyaText;
+  console.log("render page kicked off");
+  let AyaText = quranObjNew[ayaNumber].AyaText;
   let arabicElement = document.querySelector("body > div > div.area.arabic.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div");
   arabicElement.innerText = AyaText;
   //
   let aliElement = document.querySelector("body > div > div.area.translation.md\\:col-span-2.bg-myColors-panel.text-myColors-font.rounded-lg.shadow-lg > div.trans1.m-4");
-  aliElement.innerText = obj[quranIndex]["Yusuf Ali"];
+  aliElement.innerText = quranObjNew[ayaNumber]["Yusuf Ali"];
   //
   let pickthallElement = document.querySelector("body > div > div.area.translation.md\\:col-span-2.bg-myColors-panel.text-myColors-font.rounded-lg.shadow-lg > div.trans2.m-4");
-  pickthallElement.innerText = obj[quranIndex]["Pickthall"];
+  pickthallElement.innerText = quranObjNew[ayaNumber]["Pickthall"];
 
   let ArberryElement = document.querySelector("body > div > div.area.translation.md\\:col-span-2.bg-myColors-panel.text-myColors-font.rounded-lg.shadow-lg > div.trans3.m-4");
-  ArberryElement.innerText = obj[quranIndex]["Arberry"];
+  ArberryElement.innerText = quranObjNew[ayaNumber]["Arberry"];
 
   let AyaLengthInput = document.getElementById("AyaLength");
-  AyaLengthInput.innerText = "hello";
-  // console.log(AyaLengthInput.innerText + "my val");
+};
 
-  // this is Yusuf ali text
-  // body > div > div.area.translation.md\\:col-span-2.bg-myColors-panel.text-myColors-font.rounded-lg.shadow-lg > div.trans1.m-4
+quranRange = () => {
+  // debugger;
+  filteredRange = [];
+  var inputAyaLength = document.querySelector("#AyaLength").value;
 
-  filter(obj);
-
-  obj.forEach((item, index) => {
-    // console.log(item.AyaText.length);
-    // obj[index].AyaLength = item.AyaText.length;
-    // console.log(obj);
+  filteredArray = ayaLengthArray.filter((value, index) => {
+    if (Number(value) < Number(inputAyaLength)) {
+      filteredRange.push(index);
+    }
   });
 };
 
-filter = (obj) => {
-  const goButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > form > div.go.m-1.ml-3.text-myColors-button.inline-block");
-
+goButtonFunc = () => {
+  createImageBitmap;
+  let goButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div.go.m-1.ml-3.text-myColors-button.inline-block.cursor-pointer");
+  //body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > form > div.go.m-1.ml-3.text-myColors-button.inline-block
   goButtonFunc = () => {
-    let inputAyaLength = document.querySelector("#AyaLength");
-    console.log(inputAyaLength.value);
-    findAya(obj, inputAyaLength);
+    quranRange();
+    renderPage();
   };
   goButton.addEventListener("click", goButtonFunc);
+};
+
+nextButtonFunc = () => {
+  let nextButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div:nth-child(4)");
+  nextOnClick = () => {
+    quranRange();
+    ayaIndexPosInFiltered++;
+    renderPage(filteredRange[ayaIndexPosInFiltered]);
+  };
+  nextButton.addEventListener("click", nextOnClick);
 };
