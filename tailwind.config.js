@@ -55,7 +55,7 @@ module.exports = {
         4: "repeat(4, minmax(0, 1fr))",
         5: "repeat(5, minmax(0, 1fr))",
         6: "repeat(6, minmax(0, 1fr))",
-        mdSmBind: "30px 80px minmax(200px, auto) 35px minmax(200px, auto)", //medium and smaller because // 30px 80px minmax(200px, auto) 35px minmax(200px, auto)
+        mdSmBind: "30px 80px minmax(200px, auto) mixmax(35px,auto) minmax(200px, auto)", //medium and smaller because // 30px 80px minmax(200px, auto) 35px minmax(200px, auto)
         none: "none",
       },
     },
