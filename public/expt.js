@@ -30,6 +30,7 @@ fetch("quran_combined.json")
   });
 //********************************  end of quran load ******************************
 mainSeq = () => {
+  // debugger;
   renderPage();
   //quranRange(quranObj);
   goButtonFunc();
@@ -69,22 +70,32 @@ quranRange = () => {
 };
 
 goButtonFunc = () => {
-  createImageBitmap;
-  let goButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div.go.m-1.ml-3.text-myColors-button.inline-block.cursor-pointer");
-  //body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > form > div.go.m-1.ml-3.text-myColors-button.inline-block
+  let goButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.items-center.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div:nth-child(3)");
+  console.log("goButtonFunc -> goButton", goButton);
+
   goButtonFunc = () => {
+    ayaIndexPosInFiltered = 0;
     quranRange();
     renderPage(filteredRange[ayaIndexPosInFiltered]);
+    DataFunc();
   };
   goButton.addEventListener("click", goButtonFunc);
 };
 
 nextButtonFunc = () => {
-  let nextButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div:nth-child(4)");
+  let nextButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.items-center.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div:nth-child(4)");
   nextOnClick = () => {
     quranRange();
     ayaIndexPosInFiltered++;
     renderPage(filteredRange[ayaIndexPosInFiltered]);
+    DataFunc();
   };
   nextButton.addEventListener("click", nextOnClick);
+};
+
+DataFunc = () => {
+  let dataElem = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.items-center.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div.ml-3.text-yellow-500.inline-block.cursor-pointer.px-2.bg-green-900.rounded-md");
+
+  // dataElem.innerText = filteredRange.length;
+  dataElem.innerText = `Position ${ayaIndexPosInFiltered + 1} of returned ${filteredRange.length} Ayas`;
 };
