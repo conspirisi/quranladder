@@ -77,7 +77,7 @@ goButtonFunc = () => {
     ayaIndexPosInFiltered = 0;
     quranRange();
     renderPage(filteredRange[ayaIndexPosInFiltered]);
-    DataFunc();
+    DataFunc(`Position ${ayaIndexPosInFiltered + 1} of returned ${filteredRange.length} Ayas`);
   };
   goButton.addEventListener("click", goButtonFunc);
 };
@@ -87,15 +87,20 @@ nextButtonFunc = () => {
   nextOnClick = () => {
     quranRange();
     ayaIndexPosInFiltered++;
+    console.log("nextOnClick -> ayaIndexPosInFiltered", ayaIndexPosInFiltered);
+    console.log("DataFunc -> filteredRange.length", filteredRange.length);
+    if (ayaIndexPosInFiltered >= filteredRange.length) {
+      DataFunc("You've reached the end");
+      return;
+    }
+
     renderPage(filteredRange[ayaIndexPosInFiltered]);
-    DataFunc();
+    DataFunc(`Position ${ayaIndexPosInFiltered + 1} of returned ${filteredRange.length} Ayas`);
   };
   nextButton.addEventListener("click", nextOnClick);
 };
 
-DataFunc = () => {
+DataFunc = (textToDisplay) => {
   let dataElem = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.items-center.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div.ml-3.text-yellow-500.inline-block.cursor-pointer.px-2.bg-green-900.rounded-md");
-
-  // dataElem.innerText = filteredRange.length;
-  dataElem.innerText = `Position ${ayaIndexPosInFiltered + 1} of returned ${filteredRange.length} Ayas`;
+  dataElem.innerText = textToDisplay;
 };
