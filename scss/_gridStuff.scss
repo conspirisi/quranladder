@@ -1,0 +1,53 @@
+body {
+  background-color: darkslategray;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Crimson Text", serif;
+  color: $textCol;
+}
+.section {
+  // background-color: indianred;
+  /*    display: grid; */
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+// *************************************   less than 600px    *************************************
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+
+    justify-content: center;
+
+    grid-template-columns: repeat(3, minmax(100px, 220px));
+
+    // empty - header  - filters - arabic - translation - notes
+    grid-template-rows: 0px 60px 0.1fr minmax(150px, 1fr) auto;
+
+    gap: 5px;
+  }
+}
+
+// *************************************    this is greater than 600px    *************************************
+@media only screen and (min-width: 600px) {
+  .container {
+    position: relative;
+    display: grid;
+    // background-color: yellow;
+    justify-content: center;
+    /*   align-content: center; */
+
+    // try max at 700
+    // min at 500
+
+    // grid-template-columns: minmax(150px, 220px) minmax(150px, 220px) minmax(150px, 220px);
+
+    grid-template-columns: repeat(3, minmax(100px, 220px));
+
+    // grid-template-columns: minmax(100px, 200px) minmax(100px, 200px) minmax(100px, 200px);
+    grid-template-rows: 40px 60px 0.1fr minmax(150px, 1fr) auto;
+    gap: 5px;
+  }
+}

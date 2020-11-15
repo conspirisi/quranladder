@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="lengthsArray.js"></script>
+    <script src="expt.js"></script>
+    <!-- <script type="module" src="expt.js"></script> -->
+  </head>
+  <body class="mt-10 m-0 p-0 bg-myColors-bkg font-myFont">
+    <div class="container w-11/12 m-auto grid sm:grid-cols-smBind md:grid-cols-3 grid-rows-mdSmBind gap-2">
+      <div class="area nav md:col-end-4 md:justify-self-end md:col-span-2 md:w-10/12 bg-myColors-panel rounded-lg shadow-lg">nav</div>
+
+      <!-- ******************** header ******************************* -->
+      <div class="area inline-flex header md:col-span-3 bg-myColors-panel rounded-lg shadow-lg">
+        <img class="md:mt-1 ml-4" src="img/ladder.png" alt="ladder image" />
+        <div class="text-3xl md:text-5xl lg:text-5xl ml-2 text-gray-300">Qur&rsquo;an Ladder</div>
+      </div>
+
+      <!-- ******************** arabic quran ******************************* -->
+      <div class="area arabic md:col-span-3 bg-myColors-panel rounded-lg shadow-lg">
+        <div dir="rtl" lang="ar" class="text-3xl p-4 md:text-4xl arabic text-myColors-font"></div>
+      </div>
+      <!-- ******************** filters ******************************* -->
+      <div class="area text-myColors-font filters flex flex-wrap items-center md:col-span-3 bg-myColors-panel rounded-lg shadow-lg">
+        <!-- <form class="inline-block"> -->
+        <div class="filterLabel ml-2 inline-block">Aya Length</div>
+        <input type="text" id="AyaLength" name="AyaLength" required minlength="4" maxlength="8" size="5" class="m-1 h-5 text-center bg-myColors-bkg rounded-md" />
+        <div class="go ml-3 text-myColors-button inline-block cursor-pointer">Go</div>
+        <div class="go ml-3 text-myColors-button inline-block cursor-pointer">Next</div>
+        <div class="ml-3 my-1 text-yellow-500 inline-block cursor-pointer px-2 bg-green-900 rounded-md">Data</div>
+        <!-- <div class="ml-3 text-yellow-500 cursor-pointer px-2 bg-green-900 rounded-md">Data stuff</div> -->
+      </div>
+
+      <!-- ******************************* translation ******************************* -->
+      <div class="area translation md:col-span-2 bg-myColors-panel text-myColors-font rounded-lg shadow-lg">
+        <div class="translationHeader text-center mt-2 text-gray-300 font-semibold">Translation</div>
+        <div class="translater-ali ml-4 text-gray-300 -mb-4">Yusuf Ali</div>
+        <div class="trans1 m-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, debitis tempore. Animi possimus aperiam est, itaque porro obcaecati! Modi laboriosam voluptatibus, dignissimos mollitia corporis eligendi culpa quibusdam delectus voluptate est eos labore in, blanditiis repellendus. Dolores iste
+          voluptates laudantium, maxime quos hic temporibus adipisci est, neque, consequuntur consectetur molestiae qui!
+        </div>
+        <div class="translater-ali ml-4 text-gray-300 -mb-4">Pickthall</div>
+        <div class="trans2 m-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, debitis tempore. Animi possimus aperiam est, itaque porro obcaecati! Modi laboriosam voluptatibus, dignissimos mollitia corporis eligendi culpa quibusdam delectus voluptate est eos labore in, blanditiis repellendus. Dolores iste
+          voluptates laudantium, maxime quos hic temporibus adipisci est, neque, consequuntur consectetur molestiae qui!
+        </div>
+        <div class="translater-ali ml-4 text-gray-300 -mb-4">Arberry</div>
+        <div class="trans3 m-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At, debitis tempore. Animi possimus aperiam est, itaque porro obcaecati! Modi laboriosam voluptatibus, dignissimos mollitia corporis eligendi culpa quibusdam delectus voluptate est eos labore in, blanditiis repellendus. Dolores iste
+          voluptates laudantium, maxime quos hic temporibus adipisci est, neque, consequuntur consectetur molestiae qui!
+        </div>
+      </div>
+      <div class="area notes bg-myColors-panel rounded-lg shadow-lg">notes</div>
+    </div>
+  </body>
+</html>
+
+<!-- <p dir="rtl" lang="ar">رَبٍّ زِدْنٍي عِلمًا</p> -->

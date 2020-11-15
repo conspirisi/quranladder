@@ -1,0 +1,12 @@
+.filters {
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+// sfsf
+.filters * {
+  // grid-column-start: span;
+  display: inline-block;
+  margin: 5px;
+
+  // white-space: nowrap;
+}

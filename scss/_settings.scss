@@ -1,0 +1,65 @@
+.settings {
+  position: absolute;
+  background-color: black;
+  width: 80%;
+  height: 1fr;
+  top: 68px;
+  left: 10%;
+  border-radius: 10px;
+  opacity: 0.95;
+  display: none;
+  //   transform: translateX(105%);
+}
+
+.settingsDisappear {
+  display: inline-block;
+  // opacity: 0.5;
+  animation-name: fadeOut;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.settingsAppear {
+  display: inline-block;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  0% {
+    top: -200px;
+    left: 10%;
+    opacity: 0;
+  }
+  50% {
+    top: 68px;
+    left: 10%;
+    opacity: 0;
+  }
+  100% {
+    top: 68px;
+    left: 10%;
+    opacity: 0.95;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    top: 68px;
+    left: 10%;
+    opacity: 0.95;
+  }
+  50% {
+    top: 68px;
+    left: 10%;
+    opacity: 0;
+  }
+  100% {
+    top: -200px;
+    left: 10%;
+    opacity: 0;
+    z-index: -10;
+  }
+}
