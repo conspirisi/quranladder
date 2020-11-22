@@ -18,7 +18,7 @@
           <img src="img/settings-outline.svg" />
           <p>About</p>
           <p>Blog</p>
-          <p>Condfgtact</p>
+          <p>Contact</p>
           <p>this</p>
           <p>this</p>
         </div>
@@ -28,12 +28,26 @@
           <div class="line"></div>
         </div>
         <div class="settings">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quam a doloribus eaque laboriosam maxime ipsa dolores? Voluptatem cumque accusamus cupiditate, ducimus fuga labore dolorem nesciunt dolor voluptates, architecto consequatur ut earum fugiat. Eveniet ad officiis nostrum repellat
-          tempore quas, nesciunt corrupti ducimus fugit praesentium facilis ea. Odio soluta impedit ex esse autem quod quibusdam officia repellendus itaque, hic magnam ipsa ducimus consectetur reprehenderit. Eaque voluptate, consectetur aliquid voluptas quibusdam dolor commodi tenetur saepe mollitia
-          necessitatibus incidunt unde a alias minima itaque atque esse placeat quas eveniet eum ipsa inventore dignissimos. Aliquam obcaecati tenetur laborum consectetur ratione cupiditate accusantium voluptatem molestiae ullam dolorem assumenda rerum provident soluta ipsum quibusdam sint, dolores
-          sit nihil officiis? Rerum nihil quaerat unde ut assumenda, fugiat reprehenderit dolorem repellat inventore architecto dolores in illo placeat accusamus cum ipsa at aliquid alias consequatur non et explicabo, totam consequuntur recusandae? Consequuntur molestias eaque distinctio est facere
-          nulla necessitatibus qui a similique sint aliquam molestiae laudantium hic dolor, modi debitis ex veniam assumenda consectetur obcaecati dicta laboriosam esse earum. Vitae explicabo libero, voluptas suscipit, provident enim mollitia similique nihil, dignissimos temporibus iusto praesentium
-          consequatur? Voluptas accusantium alias eum sunt architecto quaerat soluta doloremque, ullam ipsum, dolore dolorem deleniti?
+          <div class="settingText">Min Ayah Length (Characters in Ayah)</div>
+          <input type="text" id="minAyaLengthInput" name="minAyaLengthInput" required minlength="4" maxlength="3" size="3" />
+          <br />
+          <div class="settingText">Max Ayah Length</div>
+          <input type="text" id="maxAyaLengthInput" name="maxAyaLengthInput" required minlength="4" maxlength="3" size="3" value="1000" />
+          <br />
+          <div class="goBtn">Go</div>
+        </div>
+      </div>
+      <!-- ******************** filters ******************************* -->
+
+      <div class="section filters">
+        <div class="info">
+          <div></div>
+          <div id="infoLength"></div>
+          <div id="position"></div>
+        </div>
+        <div class="transport">
+          <img src="img/play-skip-back-outline.svg" />
+          <img src="img/play-skip-forward-outline.svg" />
         </div>
       </div>
 
@@ -41,18 +55,6 @@
       <div class="section arabic">
         <div dir="rtl" lang="ar" class="quranText">ذَٰلِكَ ٱلۡكِتَٰبُ لَا رَيۡبَۛ فِيهِۛ هُدٗى لِّلۡمُتَّقِينَ</div>
         <div class="infoBox"></div>
-      </div>
-
-      <!-- ******************** filters ******************************* -->
-
-      <div class="section filters">
-        <div class="ayaTextLabel">Ayah Length (Chars)</div>
-        <input type="text" id="AyaLength" name="AyaLength" required minlength="4" maxlength="8" size="5" />
-        <p>Lorem ipsum isicing eli</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
       </div>
 
       <!-- ******************** translation ******************************* -->
@@ -69,7 +71,10 @@
       <!-- ******************** Notes ******************************* -->
 
       <div class="section notes">Here's our notes</div>
+
+      <!-- ******************** end of notes Notes ******************************* -->
     </div>
     <script src="app.js"></script>
+    <script src="lengthsArray.js"></script>
   </body>
 </html>

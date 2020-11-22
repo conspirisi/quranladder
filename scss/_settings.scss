@@ -1,13 +1,15 @@
 .settings {
   position: absolute;
-  background-color: black;
+  background-color: #13362f;
+  padding: 10px;
   width: 80%;
   height: 1fr;
-  top: 68px;
+  // top: 68px;
+  top: 500px;
   left: 10%;
   border-radius: 10px;
   opacity: 0.95;
-  display: none;
+  // display: none;
   //   transform: translateX(105%);
 }
 
@@ -62,4 +64,28 @@
     opacity: 0;
     z-index: -10;
   }
+}
+// ******************************* styling of filters within settings **************
+
+.settings .settingText {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+#minAyaLengthInput,
+#maxAyaLengthInput {
+  margin-left: 30px;
+  display: inline-block;
+  background-color: black;
+  text-align: center;
+  border-radius: 10px;
+  color: aqua;
+}
+
+.goBtn {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 8px;
+  cursor: pointer;
 }

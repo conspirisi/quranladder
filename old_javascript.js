@@ -86,9 +86,9 @@ nextButtonFunc = () => {
   let nextButton = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.items-center.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div:nth-child(4)");
   nextOnClick = () => {
     quranRange();
+
     ayaIndexPosInFiltered++;
-    console.log("nextOnClick -> ayaIndexPosInFiltered", ayaIndexPosInFiltered);
-    console.log("DataFunc -> filteredRange.length", filteredRange.length);
+
     if (ayaIndexPosInFiltered >= filteredRange.length) {
       DataFunc("You've reached the end");
       return;
@@ -101,6 +101,6 @@ nextButtonFunc = () => {
 };
 
 DataFunc = (textToDisplay) => {
-  let dataElem = document.querySelector("body > div > div.area.text-myColors-font.filters.flex.items-center.md\\:col-span-3.bg-myColors-panel.rounded-lg.shadow-lg > div.ml-3.text-yellow-500.inline-block.cursor-pointer.px-2.bg-green-900.rounded-md");
+  let dataElem = document.querySelector("body > div > div.section.filters > p:nth-child(1)");
   dataElem.innerText = textToDisplay;
 };
