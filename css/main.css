@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: darkslategray;
+  background-color: #2e2f33;
   margin: 0px;
   padding: 0px;
   -webkit-box-sizing: border-box;
@@ -22,9 +22,6 @@ body {
 }
 
 .section {
-  /*    display: grid; */
-  border-radius: 10px;
-  border: 1px solid white;
   -ms-grid-column-align: center;
       justify-self: center;
   width: 100%;
@@ -39,9 +36,9 @@ body {
             justify-content: center;
     -ms-grid-columns: (minmax(100px, 220px))[3];
         grid-template-columns: repeat(3, minmax(100px, 220px));
-    -ms-grid-rows: 0px 60px 0.1fr minmax(150px, 1fr) auto;
-        grid-template-rows: 0px 60px 0.1fr minmax(150px, 1fr) auto;
-    gap: 5px;
+    -ms-grid-rows: 0px 53px 60px minmax(150px, 1fr) auto;
+        grid-template-rows: 0px 53px 60px minmax(150px, 1fr) auto;
+    gap: 2px;
   }
 }
 
@@ -86,9 +83,12 @@ h1 {
   -ms-grid-row-span: 1;
   grid-row: 2/3;
   position: relative;
+  background: url("/img/panelHeader.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.settings {
+#settings {
   position: absolute;
   background-color: #13362f;
   padding: 10px;
@@ -211,7 +211,7 @@ h1 {
   color: aqua;
 }
 
-.goBtn {
+#goBtn {
   display: inline-block;
   margin-left: 10px;
   margin-top: 8px;
@@ -287,7 +287,7 @@ h1 {
   grid-row: 4/5;
 }
 
-.quranText {
+#quranText {
   font-size: 225%;
   word-spacing: 0.225em;
   margin: 15px;
@@ -310,10 +310,16 @@ h1 {
   grid-row: 3/4;
   display: -ms-grid;
   display: grid;
+  background: url("/img/panelFilter.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   -ms-grid-columns: (minmax(0, auto))[4];
       grid-template-columns: repeat(4, minmax(0, auto));
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 5px;
 }
 
@@ -321,6 +327,9 @@ h1 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-left: 5px;
 }
 
 .filters div {
@@ -372,7 +381,7 @@ h1 {
   color: lightgray;
 }
 
-.transText {
+.engTrans {
   margin-bottom: 15px;
 }
 

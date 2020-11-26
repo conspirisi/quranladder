@@ -9,34 +9,37 @@
   <body>
     <div class="div container">
       <!-- ******************** header ******************************* -->
+
       <div class="section header">
         <img src="img/ladder.png" alt="logo" />
 
         <!-- <div>hello</div> -->
         <h1>Qur&rsquo;an Ladder</h1>
-        <div class="nav">
+        <!-- <div class="nav">
           <img src="img/settings-outline.svg" />
           <p>About</p>
           <p>Blog</p>
           <p>Contact</p>
           <p>this</p>
           <p>this</p>
-        </div>
+        </div> -->
+
+        <!--  -->
+        <!-- I've swapped this burger out for the cog for now, if the name's confusing, so it's no it's the same icon as for the widescreen layout -->
         <div id="burger">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <img src="img/settings-outline.svg" />
         </div>
-        <div class="settings">
+        <div id="settings">
           <div class="settingText">Min Ayah Length (Characters in Ayah)</div>
           <input type="text" id="minAyaLengthInput" name="minAyaLengthInput" required minlength="4" maxlength="3" size="3" />
           <br />
           <div class="settingText">Max Ayah Length</div>
           <input type="text" id="maxAyaLengthInput" name="maxAyaLengthInput" required minlength="4" maxlength="3" size="3" value="1000" />
           <br />
-          <div class="goBtn">Go</div>
+          <div id="goBtn">Go</div>
         </div>
       </div>
+
       <!-- ******************** filters ******************************* -->
 
       <div class="section filters">
@@ -46,14 +49,14 @@
           <div id="position"></div>
         </div>
         <div class="transport">
-          <img src="img/play-skip-back-outline.svg" />
-          <img src="img/play-skip-forward-outline.svg" />
+          <img id="prevBtn" src="img/play-skip-back-outline.svg" />
+          <img id="nextBtn" src="img/play-skip-forward-outline.svg" />
         </div>
       </div>
 
       <!-- ******************** arabic quran ******************************* -->
       <div class="section arabic">
-        <div dir="rtl" lang="ar" class="quranText">ذَٰلِكَ ٱلۡكِتَٰبُ لَا رَيۡبَۛ فِيهِۛ هُدٗى لِّلۡمُتَّقِينَ</div>
+        <div dir="rtl" lang="ar" id="quranText">ذَٰلِكَ ٱلۡكِتَٰبُ لَا رَيۡبَۛ فِيهِۛ هُدٗى لِّلۡمُتَّقِينَ</div>
         <div class="infoBox"></div>
       </div>
 
@@ -61,11 +64,11 @@
       <div class="section translation">
         <div class="translationTitle">Translation</div>
         <div class="translator">Yusuf Ali</div>
-        <div class="transText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quas architecto esse possimus consectetur quos.</div>
+        <div id="transText1" class="engTrans">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quas architecto esse possimus consectetur quos.</div>
         <div class="translator">Pickthall</div>
-        <div class="transText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quas architecto esse possimus consectetur quos.</div>
+        <div id="transText2">class="engTrans"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quas architecto esse possimus consectetur quos.</div>
         <div class="translator">Arberry</div>
-        <div class="transText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quas architecto esse possimus consectetur quos.</div>
+        <div id="transText3" class="engTrans">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quas architecto esse possimus consectetur quos.</div>
       </div>
 
       <!-- ******************** Notes ******************************* -->

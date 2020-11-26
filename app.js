@@ -1,10 +1,14 @@
-const burger = document.getElementById("burger");
-const cog = document.querySelector("body > div > div.section.header > div.nav > img");
+// debugger;
 
-const settings = document.querySelector("body > div > div.section.header > div.settings");
+const burger = document.querySelector("#burger");
+// const cog = document.querySelector("body > div > div.section.header > div.nav > img");
+
+const settings = document.querySelector("#settings");
+
 // const settings = document.querySelector("body > div > div.section.header > div.settings");
 
 left = () => {
+  console.log("🚀 ~ file: app.js ~ line 9 ~ left", left);
   if (settings.classList.value.includes("settingsAppear")) {
     settings.classList.remove("settingsAppear");
     settings.classList.add("settingsDisappear");
@@ -15,7 +19,7 @@ left = () => {
 };
 
 burger.addEventListener("click", left);
-cog.addEventListener("click", left);
+// cog.addEventListener("click", left);
 
 // ********* from old js *************
 
@@ -50,16 +54,16 @@ mainSeq = () => {
 renderPage = (ayaNumber = 0) => {
   let AyaText = quranObjNew[ayaNumber].AyaText;
   console.log("quranObjNew[ayaNumber]", quranObjNew[ayaNumber]);
-  let arabicElement = document.querySelector("body > div > div.section.arabic > div.quranText");
+  let arabicElement = document.querySelector("#quranText");
   arabicElement.innerText = AyaText;
   //
-  let aliElement = document.querySelector("body > div > div.section.translation > div:nth-child(3)");
+  let aliElement = document.querySelector("#transText1");
   aliElement.innerText = quranObjNew[ayaNumber]["Yusuf Ali"];
   // //
-  let pickthallElement = document.querySelector("body > div > div.section.translation > div:nth-child(5)");
+  let pickthallElement = document.querySelector("#transText2");
   pickthallElement.innerText = quranObjNew[ayaNumber]["Pickthall"];
 
-  let ArberryElement = document.querySelector("body > div > div.section.translation > div:nth-child(7)");
+  let ArberryElement = document.querySelector("#transText3");
   ArberryElement.innerText = quranObjNew[ayaNumber]["Arberry"];
 
   // ayaPosFunc(`No. ${ayaIndexPosInFiltered + 1} of ${filteredRange.length} Ayahs`);
@@ -80,7 +84,7 @@ quranRange = () => {
 };
 
 goButtonFunc = () => {
-  let goButton = document.querySelector("body > div > div.section.header > div.settings > div.goBtn");
+  let goButton = document.querySelector("#goBtn");
 
   goButtonOnClick = () => {
     ayaIndexPosInFiltered = 0;
@@ -93,7 +97,8 @@ goButtonFunc = () => {
 // ****************************** button in the filter sequence ******************************
 
 nextButtonFunc = () => {
-  let nextButton = document.querySelector("body > div > div.section.filters > div.transport > img:nth-child(2)");
+  let nextButton = document.querySelector("#nextBtn");
+
   nextOnClick = () => {
     quranRange();
     ayaIndexPosInFiltered++;
@@ -108,7 +113,7 @@ nextButtonFunc = () => {
 };
 
 previousButtonFunc = () => {
-  let previousButton = document.querySelector("body > div > div.section.filters > div.transport > img:nth-child(1)");
+  let previousButton = document.querySelector("#prevBtn");
   previousOnClick = () => {
     quranRange();
     ayaIndexPosInFiltered--;

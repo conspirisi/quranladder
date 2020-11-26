@@ -1,0 +1,32 @@
+body {
+  background-color: #2e2f33;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Crimson Text", serif;
+}
+
+.rec {
+  margin: 10px auto;
+  width: 600px;
+
+  padding: 0px;
+  background-image: url("tlc.png"), url("top.png"), url("trc.png"), url("right.png"), url("brc.png"), url("bottom.png"), url("blc.png"), url("left.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, top, top right, right, bottom right, bottom, bottom left, left;
+  /*  */
+  /*order for background size is width height  */
+  background-size: /* tlc */ 50px 50px, /* top */ 90% 50px, /* trc */ 50px 50px, /* right */ 50px 80%, /* brc */ 50px 50px, /* bottom */ 90% 50px, /* blc */ 50px 50px, /* left */ 50px 80%;
+}
+
+.header {
+  height: 100px;
+}
+
+.arabic {
+  height: 200px;
+}
+
+.translation {
+  height: 500px;
+}
