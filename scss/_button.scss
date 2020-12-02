@@ -1,0 +1,49 @@
+@mixin button($btnClass, $urlRest, $urlActive, $buttonSize) {
+  #{$btnClass} {
+    display: inline-grid;
+
+    border-radius: 150px;
+    // background: url("img/play-skip-back-outline.svg"), linear-gradient(145deg, #313237, #292a2e);
+
+    background: no-repeat url($urlRest);
+
+    background-size: $buttonSize $buttonSize;
+    background-position: center;
+
+    height: $buttonSize;
+    width: $buttonSize;
+    cursor: pointer;
+  }
+
+  #{$btnClass}:active {
+    background: no-repeat url($urlActive);
+    background-size: $buttonSize $buttonSize;
+    background-position: center;
+  }
+}
+
+@include button(".cogBtn", "/img/settings btn/setting_rest.png", "/img/settings btn/setting_active.png", $BtnSizeStandard);
+@include button(".prevBtn", "/img/previous btn/prevBtn_rest.png", "/img/previous btn/prevBtn_active.png", $BtnSizeStandard);
+@include button(".nextBtn", "/img/next btn/nextBtn_rest.png", "/img/next btn/nextBtn_active.png", $BtnSizeStandard);
+
+// .button {
+//   display: inline-grid;
+
+//   border-radius: 150px;
+//   // background: url("img/play-skip-back-outline.svg"), linear-gradient(145deg, #313237, #292a2e);
+
+//   background: no-repeat url("/img/settings btn/setting_rest.png");
+
+//   background-size: $buttonSize $buttonSize;
+//   background-position: center;
+
+//   height: $buttonSize;
+//   width: $buttonSize;
+//   cursor: pointer;
+// }
+
+// .button:active {
+//   background: no-repeat url("/img/settings btn/setting_active.png");
+//   background-size: 30px 30px;
+//   background-position: center;
+// }

@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-.recOut {
+/* .recOut {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -29,7 +29,7 @@ body {
   background: #2d3035;
   box-shadow: inset 2px 2px 5px #202225, inset -2px -2px 4px #3c4046
   border-radius: 18px;
-}
+} */
 
 input[type="checkbox"] {
   height: 200px;
@@ -41,7 +41,7 @@ input[type="checkbox"] {
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  /* border: 8px solid #ececec; */
+
   border: 8px solid #ececec;
   display: flex;
   align-items: center;
@@ -57,18 +57,18 @@ input[type="checkbox"]:after {
   font-size: 50px;
 }
 
-input[type="checkbox"]:checked {
+/* input[type="checkbox"]:checked {
   box-shadow: -10px -10px 15px white, 10px 10px 15px lightgray, inset -10px -10px 15px white, inset 10px 10px 15px lightgray;
-}
+} */
 
-input[type="checkbox"]:checked::after {
+/* input[type="checkbox"]:checked::after {
   color: steelblue;
   font-size: 47px;
-}
+} */
 
-input[type="checkbox"]:hover {
-  content: "Hello";
+/* input[type="checkbox"]:hover {
+  content: "sdfs";
   text-shadow: 2px 2px 2px greenyellow;
-  color: #7a7a7a;
+  color: greenyellow;
   font-size: 50px;
-}
+} */

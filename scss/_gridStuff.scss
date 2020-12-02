@@ -17,69 +17,61 @@ body {
   color: $textCol;
 }
 
-// .panelBack {
-//   background-color: lightgray;
-//   // background: #2e2f33;
-//   background: yellow;
-//   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25), inset -2px -2px 4px #484c51;
-//   border-radius: 10px;
-// }
-
-// .panelFront {
-//   height: 98%;
-//   width: 200px;
-//   z-index: -5;
-//   background: blue;
-//   // background: #2e2f33;
-//   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), -2px -2px 4px #484c51;
-//   border-radius: 5px;
-// }
-
 .section {
-  // background: url("/img/panel.png");
-  // background-repeat: no-repeat;
-  // background-size: 100% 100%;
-  // background-origin: content-box;
   justify-self: center;
-  width: 100%;
+  width: 98%;
+
+  //
+  // background-color: #fff;
+  background-image: url("/img/tlc.png"), url("/img/trc.png"), url("/img/brc.png"), url("/img/blc.png"), url("/img/top.png"), url("/img/right.png"), url("/img/bottom.png"), url("/img/left.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, top right, bottom right, bottom left, top, right, bottom, left;
+  /*  */
+  /*order for background size is width height  */
+  $borderSquareLen: 10px;
+  $borderLeftRight: 98%;
+  $borderTopBottom: 98%;
+  background-size: /* tlc */ $borderSquareLen $borderSquareLen, /* trc */ $borderSquareLen $borderSquareLen, /* brc */ $borderSquareLen $borderSquareLen, /* blc */ $borderSquareLen $borderSquareLen, /* top */ $borderTopBottom $borderSquareLen, /* right */ $borderSquareLen $borderLeftRight,
+    /* bottom */ $borderTopBottom $borderSquareLen, /* left */ $borderSquareLen $borderLeftRight;
+
   // padding-left: 10px;
 }
 
 // *************************************   less than 600px    *************************************
 
-@media screen and (max-width: 600px) {
-  .container {
-    display: grid;
+// @media screen and (max-width: 600px) {
+.container {
+  display: grid;
 
-    justify-content: center;
+  justify-content: center;
 
-    grid-template-columns: repeat(3, minmax(100px, 220px));
+  grid-template-columns: repeat(3, minmax(100px, 150px));
 
-    //             empty - header  - filters - arabic - translation - notes
-    grid-template-rows: 0px 53px 60px minmax(150px, 1fr) auto;
+  //             empty - header  - filters - arabic - translation - notes
+  grid-template-rows: 0px 45px 45px minmax(200px, 1fr) auto;
 
-    gap: 2px;
-  }
+  gap: 4px;
 }
+// }
 
-// *************************************    this is greater than 600px    *************************************
-@media only screen and (min-width: 600px) {
-  .container {
-    position: relative;
-    display: grid;
-    // background-color: yellow;
-    justify-content: center;
-    /*   align-content: center; */
+// // *************************************    this is greater than 600px    *************************************
+// @media only screen and (min-width: 600px) {
+//   .container {
+//     position: relative;
+//     display: grid;
+//     // background-color: yellow;
+//     justify-content: center;
+//     /*   align-content: center; */
 
-    // try max at 700
-    // min at 500
+//     // try max at 700
+//     // min at 500
 
-    // grid-template-columns: minmax(150px, 220px) minmax(150px, 220px) minmax(150px, 220px);
+//     // grid-template-columns: minmax(150px, 220px) minmax(150px, 220px) minmax(150px, 220px);
 
-    grid-template-columns: repeat(3, minmax(100px, 220px));
+//     grid-template-columns: repeat(3, minmax(100px, 220px));
 
-    // grid-template-columns: minmax(100px, 200px) minmax(100px, 200px) minmax(100px, 200px);
-    grid-template-rows: 40px 60px 0.1fr minmax(150px, 1fr) auto;
-    gap: 5px;
-  }
-}
+//     // grid-template-columns: minmax(100px, 200px) minmax(100px, 200px) minmax(100px, 200px);
+//     grid-template-rows: 40px 60px 0.1fr minmax(150px, 1fr) auto;
+//     gap: 5px;
+//   }
+// }

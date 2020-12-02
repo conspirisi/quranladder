@@ -11,24 +11,14 @@
       <!-- ******************** header ******************************* -->
 
       <div class="section header">
-        <img src="img/ladder.png" alt="logo" />
+        <img class="logo" src="img/logo.png" alt="logo" />
 
         <!-- <div>hello</div> -->
         <h1>Qur&rsquo;an Ladder</h1>
-        <!-- <div class="nav">
-          <img src="img/settings-outline.svg" />
-          <p>About</p>
-          <p>Blog</p>
-          <p>Contact</p>
-          <p>this</p>
-          <p>this</p>
-        </div> -->
 
-        <!--  -->
         <!-- I've swapped this burger out for the cog for now, if the name's confusing, so it's no it's the same icon as for the widescreen layout -->
-        <div id="burger">
-          <img src="img/settings-outline.svg" />
-        </div>
+        <div id="settingsCog" class="cogBtn"></div>
+
         <div id="settings">
           <div class="settingText">Min Ayah Length (Characters in Ayah)</div>
           <input type="text" id="minAyaLengthInput" name="minAyaLengthInput" required minlength="4" maxlength="3" size="3" />
@@ -44,20 +34,17 @@
 
       <div class="section filters">
         <div class="info">
-          <div></div>
-          <div id="infoLength"></div>
-          <div id="position"></div>
+          <div id="infoLength">sfdsf</div>
+          <div id="position">sdfsfsf</div>
         </div>
-        <div class="transport">
-          <img id="prevBtn" src="img/play-skip-back-outline.svg" />
-          <img id="nextBtn" src="img/play-skip-forward-outline.svg" />
-        </div>
+        <div id="prevBtn" class="prevBtn"></div>
+        <div id="nextBtn" class="nextBtn"></div>
       </div>
 
       <!-- ******************** arabic quran ******************************* -->
       <div class="section arabic">
         <div dir="rtl" lang="ar" id="quranText">ذَٰلِكَ ٱلۡكِتَٰبُ لَا رَيۡبَۛ فِيهِۛ هُدٗى لِّلۡمُتَّقِينَ</div>
-        <div class="infoBox"></div>
+        <!-- <div class="infoBox"></div> -->
       </div>
 
       <!-- ******************** translation ******************************* -->

@@ -1,18 +1,18 @@
 // *************************************   less than 600px    *************************************
 
-@media screen and (max-width: 600px) {
-  .notes {
-    height: fit-content;
-    grid-column: 1/4;
-    grid-row: 6/7;
-  }
+// @media screen and (max-width: 600px) {
+.notes {
+  height: fit-content;
+  grid-column: 1/4;
+  grid-row: 6/7;
 }
+// }
 
 // *************************************   greater 600px    *************************************
-@media only screen and (min-width: 600px) {
-  .notes {
-    // padding-left: 10px;
-    grid-column: 3/4;
-    grid-row: 5/6;
-  }
-}
+// @media only screen and (min-width: 600px) {
+//   .notes {
+//     // padding-left: 10px;
+//     grid-column: 3/4;
+//     grid-row: 5/6;
+//   }
+// }

@@ -1,6 +1,6 @@
 // debugger;
 
-const burger = document.querySelector("#burger");
+const settingsCog = document.querySelector("#settingsCog");
 // const cog = document.querySelector("body > div > div.section.header > div.nav > img");
 
 const settings = document.querySelector("#settings");
@@ -18,7 +18,7 @@ left = () => {
   }
 };
 
-burger.addEventListener("click", left);
+settingsCog.addEventListener("click", left);
 // cog.addEventListener("click", left);
 
 // ********* from old js *************
