@@ -28,7 +28,7 @@ var quranObjNew = {};
 var ayaIndexPosInFiltered = 0;
 var inputAyaLength = document.querySelector("#maxAyaLengthInput").value;
 //********************************  this code must run before doing anything ******************************
-fetch("quran_combined.json")
+fetch("quran_combined_02.json")
   .then(function (response) {
     return response.json();
   })
@@ -54,22 +54,24 @@ mainSeq = () => {
 renderPage = (ayaNumber = 0) => {
   let AyaText = quranObjNew[ayaNumber].AyaText;
   console.log("quranObjNew[ayaNumber]", quranObjNew[ayaNumber]);
+  //
   let arabicElement = document.querySelector("#quranText");
   arabicElement.innerText = AyaText;
   //
   let aliElement = document.querySelector("#transText1");
   aliElement.innerText = quranObjNew[ayaNumber]["Yusuf Ali"];
-  // //
+  //
   let pickthallElement = document.querySelector("#transText2");
   pickthallElement.innerText = quranObjNew[ayaNumber]["Pickthall"];
-
-  let ArberryElement = document.querySelector("#transText3");
-  ArberryElement.innerText = quranObjNew[ayaNumber]["Arberry"];
-
-  // ayaPosFunc(`No. ${ayaIndexPosInFiltered + 1} of ${filteredRange.length} Ayahs`);
+  //
+  // let ArberryElement = document.querySelector("#transText3");
+  // ArberryElement.innerText = quranObjNew[ayaNumber]["Arberry"];
+  //
+  filterInfoRender(quranObjNew[ayaNumber]["Arberry"], "#transText3");
 
   filterInfoRender(`No. ${ayaIndexPosInFiltered + 1} of ${filteredRange.length} Ayahs`, "#position");
   filterInfoRender(`Ayah Length ${inputAyaLength}`, "#infoLength");
+  filterInfoRender(`Ayah Length hello ${inputAyaLength}`, "#ayahInfo");
 };
 
 quranRange = () => {
@@ -115,6 +117,11 @@ nextButtonFunc = () => {
 previousButtonFunc = () => {
   let previousButton = document.querySelector("#prevBtn");
   previousOnClick = () => {
+    if (ayaIndexPosInFiltered <= 0) {
+      ayaPosFunc("You've reached the end");
+      return;
+    }
+
     quranRange();
     ayaIndexPosInFiltered--;
 
