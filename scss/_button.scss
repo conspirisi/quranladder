@@ -22,9 +22,9 @@
   }
 }
 
-@include button(".cogBtn", "/img/settings btn/setting_rest.png", "/img/settings btn/setting_active.png", $BtnSizeStandard);
-@include button(".prevBtn", "/img/previous btn/prevBtn_rest.png", "/img/previous btn/prevBtn_active.png", $BtnSizeStandard);
-@include button(".nextBtn", "/img/next btn/nextBtn_rest.png", "/img/next btn/nextBtn_active.png", $BtnSizeStandard);
+@include button(".cogBtn", "/img/setting_btn/setting_rest.png", "/img/settings_btn/setting_active.png", $BtnSizeStandard);
+@include button(".prevBtn", "/img/previous_btn/prevBtn_rest.png", "/img/previous_btn/prevBtn_active.png", $BtnSizeStandard);
+@include button(".nextBtn", "/img/next_btn/nextBtn_rest.png", "/img/next_btn/nextBtn_active.png", $BtnSizeStandard);
 
 // .button {
 //   display: inline-grid;
