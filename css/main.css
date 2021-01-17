@@ -19,7 +19,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Crimson Text", serif;
-  color: #83cbff;
+  color: #8ad9d0;
 }
 
 .section {
@@ -128,14 +128,23 @@ h1 {
 
 #settings {
   position: absolute;
-  background-color: #13362f;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 98%;
+  background-image: url("../img/tlc.png"), url("../img/trc.png"), url("../img/brc.png"), url("../img/blc.png"), url("../img/top.png"), url("../img/right.png"), url("../img/bottom.png"), url("../img/left.png"), -webkit-gradient(linear, left top, left bottom, from(#2e2f33), to(#2e2f33));
+  background-image: url("../img/tlc.png"), url("../img/trc.png"), url("../img/brc.png"), url("../img/blc.png"), url("../img/top.png"), url("../img/right.png"), url("../img/bottom.png"), url("../img/left.png"), linear-gradient(#2e2f33, #2e2f33);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, top right, bottom right, bottom left, top, right, bottom, left;
+  /*  */
+  /*order for background size is width height  */
+  background-size: 10px 10px, 10px 10px, 10px 10px, 10px 10px, 98% 10px, 10px 98%, 98% 10px, 10px 98%, 100% 100%;
   padding: 10px;
   width: 80%;
   height: 1fr;
-  top: 500px;
+  top: 68px;
   left: 10%;
   border-radius: 10px;
-  opacity: 0.95;
+  opacity: 0.98;
 }
 
 .settingsDisappear {
@@ -293,11 +302,11 @@ h1 {
   margin: 15px;
 }
 
-.infoBox {
+#ayahInfo {
   height: 20px;
   width: 300px;
-  background-color: indianred;
   margin: 5px;
+  margin-left: 10px;
   border-radius: 10px;
 }
 

@@ -1,151 +1,130 @@
-// debugger;
-
-const settingsCog = document.querySelector("#settingsCog");
+const settingsCog = document.querySelector("#settingsCog")
 // const cog = document.querySelector("body > div > div.section.header > div.nav > img");
 
-const settings = document.querySelector("#settings");
+const settings = document.querySelector("#settings")
 
 // const settings = document.querySelector("body > div > div.section.header > div.settings");
 
 left = () => {
-  console.log("🚀 ~ file: app.js ~ line 9 ~ left", left);
   if (settings.classList.value.includes("settingsAppear")) {
-    settings.classList.remove("settingsAppear");
-    settings.classList.add("settingsDisappear");
+    settings.classList.remove("settingsAppear")
+    settings.classList.add("settingsDisappear")
   } else {
-    settings.classList.remove("settingsDisappear");
-    settings.classList.add("settingsAppear");
+    settings.classList.remove("settingsDisappear")
+    settings.classList.add("settingsAppear")
   }
-};
+}
 
-settingsCog.addEventListener("click", left);
+settingsCog.addEventListener("click", left)
 // cog.addEventListener("click", left);
 
 // ********* from old js *************
 
-var filteredRange = [];
-var quranObjNew = {};
-var ayaIndexPosInFiltered = 0;
-var inputAyaLength = document.querySelector("#maxAyaLengthInput").value;
+var filteredRange = []
+var quranObjNew = {}
+var ayaIndexPosInFiltered = 0
+var inputAyaLength = document.querySelector("#maxAyaLengthInput").value
 //********************************  this code must run before doing anything ******************************
 fetch("quran_combined_02.json")
   .then(function (response) {
-    return response.json();
+    return response.json()
   })
   .then(function (quranObj) {
     // console.log(quranObj);
-    quranObjNew = quranObj;
+    quranObjNew = quranObj
 
-    mainSeq();
+    mainSeq()
   })
   .catch(function (error) {
-    console.error("Something went wrong retrieving the quran");
-    console.error(console.error);
-  });
+    // console.error("Something went wrong retrieving the quran")
+    // console.error(console.error)
+  })
 //********************************  end of quran load ******************************
 mainSeq = () => {
-  goButtonFunc();
-  nextButtonFunc();
-  goButtonOnClick(); // This initial renders the page
-  previousButtonFunc();
-};
+  goButtonFunc()
+  nextButtonFunc()
+  // goButtonOnClick() // This initial renders the page
+  previousButtonFunc()
+  renderPage()
+}
 
 // ****************************** main sequence ******************************
 renderPage = (ayaNumber = 0) => {
-  let AyaText = quranObjNew[ayaNumber].AyaText;
-  console.log("quranObjNew[ayaNumber]", quranObjNew[ayaNumber]);
-  //
-  let arabicElement = document.querySelector("#quranText");
-  arabicElement.innerText = AyaText;
-  //
-  let aliElement = document.querySelector("#transText1");
-  aliElement.innerText = quranObjNew[ayaNumber]["Yusuf Ali"];
-  //
-  let pickthallElement = document.querySelector("#transText2");
-  pickthallElement.innerText = quranObjNew[ayaNumber]["Pickthall"];
-  //
-  // let ArberryElement = document.querySelector("#transText3");
-  // ArberryElement.innerText = quranObjNew[ayaNumber]["Arberry"];
-  //
-  filterInfoRender(quranObjNew[ayaNumber]["Arberry"], "#transText3");
-
-  filterInfoRender(`No. ${ayaIndexPosInFiltered + 1} of ${filteredRange.length} Ayahs`, "#position");
-  filterInfoRender(`Ayah Length ${inputAyaLength}`, "#infoLength");
-  filterInfoRender(`Ayah Length hello ${inputAyaLength}`, "#ayahInfo");
-};
+  quranRange()
+  filterInfoRender(quranObjNew[ayaNumber].AyaText, "#quranText")
+  filterInfoRender(quranObjNew[ayaNumber]["Yusuf Ali"], "#transText1")
+  filterInfoRender(quranObjNew[ayaNumber]["Pickthall"], "#transText2")
+  filterInfoRender(quranObjNew[ayaNumber]["Arberry"], "#transText3")
+  filterInfoRender(`No. ${ayaIndexPosInFiltered + 1} of ${filteredRange.length} Ayahs`, "#position")
+  filterInfoRender(`Ayah Length ${inputAyaLength}`, "#infoLength")
+  filterInfoRender(quranObjNew[ayaNumber]["Sura Name English"], "#ayahInfo")
+  console.trace("my first trace")
+}
 
 quranRange = () => {
-  filteredRange = [];
-  inputAyaLength = document.querySelector("#maxAyaLengthInput").value;
+  filteredRange = []
+  inputAyaLength = document.querySelector("#maxAyaLengthInput").value
   // debugger;
   filteredArray = ayaLengthArray.filter((value, index) => {
     if (Number(value) < Number(inputAyaLength)) {
-      filteredRange.push(index);
+      filteredRange.push(index)
     }
-  });
-};
+  })
+}
 
 goButtonFunc = () => {
-  let goButton = document.querySelector("#goBtn");
+  let goButton = document.querySelector("#goBtn")
 
   goButtonOnClick = () => {
-    ayaIndexPosInFiltered = 0;
-    quranRange();
-    renderPage(filteredRange[ayaIndexPosInFiltered]);
-  };
-  goButton.addEventListener("click", goButtonOnClick);
-};
+    // ayaIndexPosInFiltered = 0
+    ayaIndexPosInFiltered = parseInt(document.querySelector("#AyaPosInFiltered").value) - 1
+    // quranRange()
+    renderPage(filteredRange[ayaIndexPosInFiltered])
+  }
+  goButton.addEventListener("click", goButtonOnClick)
+}
 
 // ****************************** button in the filter sequence ******************************
 
 nextButtonFunc = () => {
-  let nextButton = document.querySelector("#nextBtn");
+  let nextButton = document.querySelector("#nextBtn")
 
   nextOnClick = () => {
-    quranRange();
-    ayaIndexPosInFiltered++;
+    // quranRange()
+    ayaIndexPosInFiltered++
     if (ayaIndexPosInFiltered >= filteredRange.length) {
-      ayaPosFunc("You've reached the end");
-      return;
+      ayaPosFunc("You've reached the end")
+      return
     }
 
-    renderPage(filteredRange[ayaIndexPosInFiltered]);
-  };
-  nextButton.addEventListener("click", nextOnClick);
-};
+    renderPage(filteredRange[ayaIndexPosInFiltered])
+  }
+  nextButton.addEventListener("click", nextOnClick)
+}
 
 previousButtonFunc = () => {
-  let previousButton = document.querySelector("#prevBtn");
+  let previousButton = document.querySelector("#prevBtn")
   previousOnClick = () => {
     if (ayaIndexPosInFiltered <= 0) {
-      ayaPosFunc("You've reached the end");
-      return;
+      ayaPosFunc("You've reached the end")
+      ayaIndexPosInFiltered = 1
+      return
     }
 
-    quranRange();
-    ayaIndexPosInFiltered--;
+    // quranRange()
+    ayaIndexPosInFiltered--
 
     if (ayaIndexPosInFiltered >= filteredRange.length) {
-      ayaPosFunc("You've reached the end");
-      return;
+      ayaPosFunc("You've reached the end")
+      return
     }
 
-    renderPage(filteredRange[ayaIndexPosInFiltered]);
-  };
-  previousButton.addEventListener("click", previousOnClick);
-};
+    renderPage(filteredRange[ayaIndexPosInFiltered])
+  }
+  previousButton.addEventListener("click", previousOnClick)
+}
 
 filterInfoRender = (textToDisplay, Element) => {
-  let dataElem = document.querySelector(Element);
-  dataElem.innerText = textToDisplay;
-};
-
-// ayaPosFunc = (textToDisplay) => {
-//   let dataElem = document.querySelector("#position");
-//   dataElem.innerText = textToDisplay;
-// };
-
-// ayaLengthDisp =(textToDisplay)=>{
-//   let dataElem = document.querySelector("#position");
-//   dataElem.innerText = textToDisplay;
-// }
+  let dataElem = document.querySelector(Element)
+  dataElem.innerText = textToDisplay
+}

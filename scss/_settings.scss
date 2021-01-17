@@ -1,14 +1,33 @@
 #settings {
   position: absolute;
-  background-color: #13362f;
+  // background-color: #13362f;
+  //
+  justify-self: center;
+  width: 98%;
+
+  //
+  // background-color: #fff;
+  background-image: url("../img/tlc.png"), url("../img/trc.png"), url("../img/brc.png"), url("../img/blc.png"), url("../img/top.png"), url("../img/right.png"), url("../img/bottom.png"), url("../img/left.png"), linear-gradient($backGroundMain, $backGroundMain);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, top right, bottom right, bottom left, top, right, bottom, left;
+  /*  */
+  /*order for background size is width height  */
+  $borderSquareLen: 10px;
+  $borderLeftRight: 98%;
+  $borderTopBottom: 98%;
+  background-size:  /* tlc */ $borderSquareLen $borderSquareLen, /* trc */ $borderSquareLen $borderSquareLen, /* brc */ $borderSquareLen $borderSquareLen, /* blc */ $borderSquareLen $borderSquareLen, /* top */ $borderTopBottom $borderSquareLen, /* right */ $borderSquareLen $borderLeftRight,
+    /* bottom */ $borderTopBottom $borderSquareLen, /* left */ $borderSquareLen $borderLeftRight, 100% 100%;
+
+  //
+  //background-image: linear-gradient(#e66465, #9198e5);
   padding: 10px;
   width: 80%;
   height: 1fr;
-  // top: 68px;
-  top: 500px;
+  top: 68px;
+  // top: 500px;
   left: 10%;
   border-radius: 10px;
-  opacity: 0.95;
+  opacity: 0.98;
   // display: none;
   //   transform: translateX(105%);
 }
