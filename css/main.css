@@ -248,6 +248,7 @@ h1 {
   margin-top: 8px;
 }
 
+#AyaPosInFiltered,
 #minAyaLengthInput,
 #maxAyaLengthInput {
   margin-left: 30px;

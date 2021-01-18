@@ -25,7 +25,7 @@ var quranObjNew = {}
 var ayaIndexPosInFiltered = 0
 var inputAyaLength = document.querySelector("#maxAyaLengthInput").value
 //********************************  this code must run before doing anything ******************************
-fetch("quran_combined_02.json")
+fetch("quran_combined_03.json")
   .then(function (response) {
     return response.json()
   })
